@@ -33,7 +33,7 @@ console.log("I am number 3");
 
 // ////////////////////////////
 // Recognize fetch as an Asynchronous activity
-console.log(1);
+/* console.log(1);
 console.log(2);
 
 fetch("https://jsonplaceholder.typicode.com/todos/1")
@@ -54,3 +54,23 @@ console.log(4);
 for (let i = 0; i < 1000; i++) {
 	console.log(i);
 }
+ */
+
+//////////////////////////////////////
+// setInterval and clearInterval with x++ and ++x
+
+/* let second = 0;
+setInterval(() => {
+	// console.log(second++);
+	console.log(++second);
+}, 1000); */
+
+/* let time = 0;
+let timeing = setInterval(() => {
+	console.log(time++);
+
+	if (time > 5) {
+		clearInterval(timeing);
+	}
+}, 1000);
+ */
