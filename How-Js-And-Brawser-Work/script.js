@@ -74,3 +74,59 @@ let timeing = setInterval(() => {
 	}
 }, 1000);
  */
+
+/////////////////////////////////////////
+// shopping cart simple project
+const addItem = () => {
+	const nameFiled = document.getElementById("name");
+	const nameText = nameFiled.value;
+	// display name of ui
+	displayName(nameText);
+
+	addToCart(nameText);
+
+	nameFiled.value = "";
+};
+
+const displayName = name => {
+	const list = document.getElementById("list");
+	const li = document.createElement("li");
+	li.innerText = name;
+	list.appendChild(li);
+};
+
+const getCart = () => {
+	const cart = localStorage.getItem("cart");
+	let cartObj;
+	if (cart) {
+		cartObj = JSON.parse(cart);
+	} else {
+		cartObj = {};
+	}
+	return cartObj;
+};
+
+const addToCart = name => {
+	const cart = getCart();
+	if (cart[name]) {
+		cart[name] = cart[name] + 1;
+	} else {
+		cart[name] = 1;
+	}
+	const setCart = JSON.stringify(cart);
+	localStorage.setItem("cart", setCart);
+};
+
+const displayCart = () => {
+	const cart = getCart();
+	for (const name in cart) {
+		displayName(name);
+	}
+};
+
+const placeOrder = () => {
+	document.getElementById("list").textContent = "";
+	localStorage.removeItem("cart");
+};
+
+displayCart();
