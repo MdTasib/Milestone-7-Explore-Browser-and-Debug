@@ -82,7 +82,6 @@ const addItem = () => {
 	const nameText = nameFiled.value;
 	// display name of ui
 	displayName(nameText);
-
 	addToCart(nameText);
 
 	nameFiled.value = "";
